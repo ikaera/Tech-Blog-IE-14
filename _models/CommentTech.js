@@ -10,8 +10,6 @@ CommentTech.init(
       primaryKey: true,
       allowNull: false,
     },
-  },
-  {
     use_id: {
       type: DataTypes.INTEGER,
       references: {

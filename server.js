@@ -7,10 +7,10 @@ const path = require('path');
 // Import express-session
 const session = require('express-session');
 
-const routes = require('./_controllers');
+// const routes = require('./_controllers');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const helpers = require('./utils/helpers');
+// const helpers = require('./utils/helpers');
 
 // Sets up the Express App
 const app = express();
@@ -40,9 +40,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./_controllers/'));
 
-app.use(routes);
+// app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () =>
     console.log('Server listening on: http://localhost:' + PORT)
   );
