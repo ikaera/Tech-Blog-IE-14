@@ -11,7 +11,7 @@ BlogTech.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -21,7 +21,6 @@ BlogTech.init(
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
     },
 
     user_id: {
@@ -30,11 +29,6 @@ BlogTech.init(
         model: 'usertech',
         key: 'id',
       },
-    },
-
-    funding_needed: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
     },
   },
   {
