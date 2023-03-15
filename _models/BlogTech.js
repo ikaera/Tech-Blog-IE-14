@@ -26,7 +26,7 @@ BlogTech.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'usertech',
+        model: 'UserTech',
         key: 'id',
       },
     },
@@ -36,7 +36,7 @@ BlogTech.init(
     timestamps: false,
     freezeTableName: false,
     underscored: true,
-    modelName: 'blogtech',
+    modelName: 'BlogTech',
   }
 );
 

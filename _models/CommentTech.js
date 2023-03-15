@@ -13,7 +13,7 @@ CommentTech.init(
     use_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'usertech',
+        model: 'UserTech',
         key: 'id',
       },
     },
@@ -29,7 +29,7 @@ CommentTech.init(
     blog_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'blogtech',
+        model: 'BlogTech',
         key: 'id',
       },
     },
@@ -40,7 +40,7 @@ CommentTech.init(
     timestamps: false,
     freezeTableName: false,
     underscored: true,
-    modelName: 'commenttech',
+    modelName: 'CommentTech',
   }
 );
 

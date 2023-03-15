@@ -100,7 +100,7 @@ UserTech.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'usertech',
+    modelName: 'UserTech',
   }
 );
 
