@@ -10,7 +10,9 @@
     "sequelize": "^6.3.5"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node seeds/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "name": "tech-blog-ie-14",
   "version": "1.0.0",
@@ -31,5 +33,5 @@
   },
   "homepage": "https://github.com/ikaera/Tech-Blog-IE-14#readme",
   "keywords": [],
-  "description": ""
+  "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
 }
