@@ -1,25 +1,25 @@
-const UserTech = require('./UserTech');
-const BlogTech = require('./BlogTech');
-const CommentTech = require('./CommentTech');
+const Usertech = require('./Usertech');
+const Blogtech = require('./Blogtech');
+const Commenttech = require('./Commenttech');
 
-UserTech.hasMany(BlogTech, {
+Usertech.hasMany(Blogtech, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
 
-BlogTech.belongsTo(UserTech, {
+Blogtech.belongsTo(Usertech, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
 
-BlogTech.hasMany(CommentTech, {
+Blogtech.hasMany(Commenttech, {
   foreignKey: 'blog_id',
   onDelete: 'CASCADE',
 });
 
-CommentTech.belongsTo(UserTech, {
+Commenttech.belongsTo(Usertech, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
 
-module.exports = { UserTech, BlogTech, CommentTech };
+module.exports = { Usertech, Blogtech, Commenttech };

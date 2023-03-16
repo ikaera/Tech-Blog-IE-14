@@ -1,8 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-class CommentTech extends Model {}
+class Commenttech extends Model {}
 
-CommentTech.init(
+Commenttech.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -38,10 +38,10 @@ CommentTech.init(
   {
     sequelize,
     timestamps: false,
-    freezeTableName: false,
+    freezeTableName: true,
     underscored: true,
-    modelName: 'CommentTech',
+    modelName: 'commenttech',
   }
 );
 
-module.exports = CommentTech;
+module.exports = Commenttech;
