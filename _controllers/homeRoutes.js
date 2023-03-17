@@ -3,7 +3,7 @@ const { Usertech, Commenttech, Blogtech } = require('../_models');
 const withAuth = require('../utils/auth');
 
 // GET all blogs for homepage
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const blogData = await Blogtech.findAll({
       include: [
