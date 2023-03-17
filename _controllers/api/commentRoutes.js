@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { CommentTech } = require('../../_models');
+const { Commenttech } = require('../../_models');
 
 // GET all comments
 router.get('/', async (req, res) => {
   try {
-    const comData = await CommentTech.findAll({
+    const comData = await Commenttech.findAll({
       include: [
         {
           model: UserTech,
@@ -34,7 +34,7 @@ router.get('/blog/:id', async (req, res) => {
   } else {
     // If the user is logged in, allow them to view the gallery
     try {
-      const comData = await CommentTech.findByPk(req.params.id, {
+      const comData = await Commenttech.findByPk(req.params.id, {
         include: [
           {
             model: UserTech,
@@ -49,7 +49,7 @@ router.get('/blog/:id', async (req, res) => {
             ],
           },
           {
-            model: CommentTech,
+            model: Commenttech,
             include: [UserTech],
           },
         ],
@@ -66,7 +66,7 @@ router.get('/blog/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const newCom = await CommentTech.create({
+    const newCom = await Commenttech.create({
       ...req.body,
       user_id: req.session.user_id,
     });
@@ -79,7 +79,7 @@ router.post('/', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    const comData = await CommentTech.destroy({
+    const comData = await Commenttech.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,

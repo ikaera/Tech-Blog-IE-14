@@ -28,10 +28,10 @@ Blogtech.init(
 
     user_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'UserTech',
-        key: 'id',
-      },
+      // references: {
+      //   model: 'Usertech',
+      //   key: 'id',
+      // },
     },
   },
   {

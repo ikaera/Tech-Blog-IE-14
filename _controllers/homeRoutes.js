@@ -1,14 +1,14 @@
 const router = require('express').Router();
-const { UserTech, CommentTech, BlogTech } = require('../_models');
+const { Usertech, Commenttech, Blogtech } = require('../_models');
 const withAuth = require('../utils/auth');
 
 // GET all blogs for homepage
 router.get('/', async (req, res) => {
   try {
-    const blogData = await BlogTech.findAll({
+    const blogData = await Blogtech.findAll({
       include: [
         {
-          model: UserTech,
+          model: Usertech,
           attributes: ['name', 'email'],
         },
       ],
@@ -34,10 +34,10 @@ router.get('/blog/:id', async (req, res) => {
   } else {
     // If the user is logged in, allow them to view the gallery
     try {
-      const blogData = await BlogTech.findByPk(req.params.id, {
+      const blogData = await Blogtech.findByPk(req.params.id, {
         include: [
           {
-            model: UserTech,
+            model: Usertech,
             attributes: [
               'username',
               'id',
@@ -49,8 +49,8 @@ router.get('/blog/:id', async (req, res) => {
             ],
           },
           {
-            model: CommentTech,
-            include: [UserTech],
+            model: Commenttech,
+            include: [Usertech],
           },
         ],
       });
@@ -69,3 +69,5 @@ router.get('/blog/:id', async (req, res) => {
 // GET login
 
 // GET signUp
+
+module.exports = router;

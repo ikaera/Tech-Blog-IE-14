@@ -1,6 +1,7 @@
 [
   {
     "title": "Test1 Blog",
-    "description": "Test1"
+    "description": "Test1",
+    "date_created": "1/1/2001"
   }
 ]
