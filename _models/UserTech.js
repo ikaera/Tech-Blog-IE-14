@@ -15,18 +15,18 @@ Usertech.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
-    },
+    // email: {
+    //   type: DataTypes.STRING,
+    //   allowNull: true,
+    //   unique: true,
+    //   validate: {
+    //     isEmail: true,
+    //   },
+    // },
     password: {
       type: DataTypes.STRING,
       allowNull: false,

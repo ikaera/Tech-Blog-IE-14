@@ -19,13 +19,13 @@ router.post('/', async (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     const userData = await Usertech.findOne({
-      where: { email: req.body.email },
+      where: { username: req.body.username },
     });
 
     if (!userData) {
       res
-        .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .status(401)
+        .json({ message: 'Incorrect username or password, please try again' });
       return;
     }
 
@@ -45,7 +45,8 @@ router.post('/login', async (req, res) => {
       res.json({ user: userData, message: 'You are now logged in!' });
     });
   } catch (err) {
-    res.status(400).json(err);
+    console.error(err);
+    res.status(500).json(err);
   }
 });
 
