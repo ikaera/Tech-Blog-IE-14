@@ -1,3 +1,31 @@
-<divclass="row mb-4 project">
+<ul class='blog-list'>
+  {{#each blogs as |blog|}}
+    <li>
+      <article class='blog'>
+        <div class='entire-blog'>
+          <div class='info'>
+            <div class='blog-name'>
+              <a href='/blog/{{id}}' class='links'>{{title}}</a>
+            </div>
+            <div class='created-by'>
+              <p id='comment-subtitle'>
+                Posted by
+                <b>{{user.username}} </b>
+                on
+                <b>{{formatDate created_at}}</b>
+              </p>
+            </div>
+          </div>
+          <div class='content-div'>
+            <p>{{content}}</p>
+          </div>
+        </div>
+      </article>
+      {{blog}}
+    </li>
+  {{/each}}
+</ul>
+
+{{! <divclass="row mb-4 project">
   <h1>Hello</h1>
-</div>
+</div> }}

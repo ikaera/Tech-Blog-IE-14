@@ -28,10 +28,6 @@ Commenttech.init(
 
     blog_id: {
       type: DataTypes.INTEGER,
-      // references: {
-      //   model: 'Blogtech',
-      //   key: 'id',
-      // },
     },
   },
 
