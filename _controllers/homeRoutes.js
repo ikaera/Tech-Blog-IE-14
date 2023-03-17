@@ -3,7 +3,7 @@ const { Usertech, Commenttech, Blogtech } = require('../_models');
 const withAuth = require('../utils/auth');
 
 // GET all blogs for homepage
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const blogData = await Blogtech.findAll({
       include: [
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET one blog
-router.get('/blog/:id', async (req, res) => {
+router.get('/blog/:id', withAuth, async (req, res) => {
   // If the user is not logged in, redirect the user to the login page
   if (!req.session.loggedIn) {
     res.redirect('/login');
