@@ -4,12 +4,12 @@
 
 ## Description
 
-My motivation to accomplish this project was the following: I wanted to build a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. I have built this site completely from scratch. My app follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
+My motivation to accomplish this project was the following: I wanted to build a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. I have built this site completely from scratch. My app follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM (Object Relational Mapper), and the express-session npm package for authentication.
 
 ### User Story
 
 - AS A developer who writes about tech,
-   I WANT a CMS-style blog site,
+   I WANT a CMS-style (content management system) blog site,
     - SO THAT I can publish articles, blog posts, and my thoughts and opinions.
 
 
@@ -92,9 +92,7 @@ My motivation to accomplish this project was the following: I wanted to build a 
  - The URL of the functional, deployed application: 
     * 
 - The URL of the GitHub repository:
-    * 
-
-
+    * https://github.com/ikaera/Tech-Blog-IE-14
 
 
 <!-- Provide instructions and examples for use. Include screenshots as needed.
