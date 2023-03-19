@@ -1,11 +1,11 @@
 async function deleteHandlerEvent(event) {
   event.preventDefault();
 
-  const blodId = window.location.toString().split('/')[
+  const blogId = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
 
-  const response = await fetch(`/api/posts/${blodId}`, {
+  const response = await fetch(`/api/posts/${blogId}`, {
     method: 'DELETE',
   });
 
