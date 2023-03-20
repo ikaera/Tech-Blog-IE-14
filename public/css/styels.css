@@ -238,7 +238,7 @@ main {
 .edit-link {
   display: block;
   margin: -1.5% 0 2% 0;
-  color: #2c2307;
+  color: var(--color-secondary-darker);
 }
 
 .comment-form {
@@ -307,5 +307,11 @@ main {
 }
 
 .footer {
+  /* background: blue; */
+  height: 50px;
+  margin: auto;
+  /* width: 400px; */
   text-align: center;
+  /* padding: 10px; */
+  /* color: #ffffff; */
 }
