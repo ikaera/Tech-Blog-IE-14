@@ -38,15 +38,15 @@ router.get('/blog/:id', withAuth, async (req, res) => {
       include: [
         {
           model: Usertech,
-          attributes: [
-            'username',
-            'id',
-            'title',
-            'artist',
-            'exhibition_date',
-            'filename',
-            'description',
-          ],
+          // attributes: [
+          //   'username',
+          //   'id',
+          //   'title',
+          //   'artist',
+          //   'exhibition_date',
+          //   'filename',
+          //   'description',
+          // ],
         },
         {
           model: Commenttech,
@@ -56,7 +56,7 @@ router.get('/blog/:id', withAuth, async (req, res) => {
     });
     const blog = blogData.get({ plain: true });
 
-    res.render('blog', { ...blog, loggedIn: req.session.loggedIn });
+    res.render('blog', { blog, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -73,13 +73,34 @@ router.get('/dashboard', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
+    console.log(user);
     res.render('dashboard', {
       ...user,
       loggedIn: true,
     });
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+router.get('/new', withAuth, (req, res) => {
+  res.render('addBlog', {
+    // layout: 'dashboard',
+  });
+});
+
+// when someone edits their comment
+router.get('/edit/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id);
+
+    if (postData) {
+      const post = postData.get({ plain: true });
+
+      res.render('edit-post', { layout: 'dashboard', post });
+    } else res.status(404).end();
+  } catch (err) {
+    res.redirect('login');
   }
 });
 

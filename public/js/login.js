@@ -15,7 +15,8 @@ async function loginFormHandlerEvent(event) {
         'Content-Type': 'application/json',
       },
     });
-
+    const result = await response.json();
+    console.log(result);
     if (response.ok) {
       document.location.replace('/dashboard');
       // document.location.replace('/');
@@ -52,6 +53,6 @@ document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandlerEvent);
 
-document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
+// document
+//   .querySelector('.signup-form')
+//   .addEventListener('submit', signupFormHandler);

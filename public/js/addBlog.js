@@ -1,12 +1,12 @@
 async function addBlogFormHandler(event) {
   event.preventDefault();
-
+  console.log('Hello!');
   const title = document.querySelector('input[name="blog-title"]').value;
   const blogContent = document
     .querySelector('textarea[name="blog-content"]')
     .value.trim();
 
-  const response = await fetch(`/api/posts`, {
+  const response = await fetch(`/api/blog`, {
     method: 'POST',
     body: JSON.stringify({
       title,
@@ -16,9 +16,10 @@ async function addBlogFormHandler(event) {
       'Content-Type': 'application/json',
     },
   });
-
+  const result = await response.json();
+  console.log(result);
   if (response.ok) {
-    document.location.replace('../dashboard');
+    document.location.replace('/dashboard');
   } else {
     alert(response.statusText);
   }

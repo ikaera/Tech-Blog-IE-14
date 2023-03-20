@@ -8,7 +8,8 @@ async function deleteHandlerEvent(event) {
   const response = await fetch(`/api/posts/${blogId}`, {
     method: 'DELETE',
   });
-
+  const result = await response.json();
+  console.log(result);
   if (response.ok) {
     document.location.replace('/dashboard');
   } else {

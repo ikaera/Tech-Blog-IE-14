@@ -16,6 +16,9 @@ async function signUpHandler(event) {
       },
     });
 
+    const result = await response.json();
+    console.log(result);
+
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {

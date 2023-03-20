@@ -5,23 +5,23 @@
         <div class='entire-blog'>
           <div class='info'>
             <div class='blog-name'>
-              <a href='/blog/{{id}}' class='links'>{{title}}</a>
+              <a href='/blog/{{blog.id}}' class='links'>{{blog.title}}</a>
             </div>
             <div class='created-by'>
               <p id='comment-subtitle'>
                 Posted by
-                <b>{{user.username}} </b>
-                {{! on }}
-                {{!-- <b>{{formatDate created_at}}</b> --}}
+                <b>{{blog.user.username}} </b>
+                on
+                <b>{{formatDate blog.date_created}}</b>
               </p>
             </div>
           </div>
           <div class='content-div'>
-            <p>{{content}}</p>
+            <p>{{blog.description}}</p>
           </div>
         </div>
       </article>
-      {{blog}}
+      {{!-- {{blog.title}} --}}
     </li>
   {{/each}}
 </ul>

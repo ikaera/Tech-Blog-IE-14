@@ -4,6 +4,6 @@ async function createBlogHandler(event) {
   document.location.replace('/dashboard/new');
 }
 
-document
-  .querySelector('#create-new-blog')
-  .addEventListener('click', createBlogHandler);
+// document
+// .querySelector('#create-new-blog')
+// .addEventListener('click', createBlogHandler);
