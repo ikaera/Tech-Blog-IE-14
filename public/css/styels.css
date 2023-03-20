@@ -1,0 +1,311 @@
+:root {
+  --color-primary: #5ec576;
+  --color-secondary: #ffcb03;
+  --color-tertiary: #ff585f;
+  --color-primary-darker: #4bbb7d;
+  --color-secondary-darker: #ffbb00;
+  --color-tertiary-darker: #fd424b;
+  --color-primary-opacity: #5ec5763a;
+  --color-secondary-opacity: #ffcd0331;
+  --color-tertiary-opacity: #ff58602d;
+  --gradient-primary: linear-gradient(to top left, #39b385, #9be15d);
+  --gradient-secondary: linear-gradient(to top left, #ffcb03, #ffee03);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* html {
+  font-size: 10px;
+} */
+
+body {
+  font-weight: 300;
+  color: #444;
+  margin: 25px;
+  background-color: #f3f3f3;
+}
+
+/* h2 {
+  font-size: 2rem;
+} */
+
+/* .main {
+  background: var(--gradient-secondary);
+  padding: 2rem;
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: var(--color-primary-darker);
+}
+
+main,
+.site-name {
+  background-color: azure;
+}
+
+a,
+.button-no-style,
+#comment-subtitle {
+  color: #b8cba2;
+}
+
+a:hover,
+.button-no-style:hover {
+  color: #e2edd5;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.1s;
+}
+
+button {
+  background-color: var(--color-primary-darker);
+  border: 0;
+  padding: 1%;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.1s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: var(--color-secondary-darker);
+}
+
+.blog-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.go-back {
+  color: #2c2307;
+}
+
+textarea,
+input {
+  padding: 0.5%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  border: 1px solid #3486eb;
+}
+
+textarea {
+  min-width: 40%;
+  min-height: 100px;
+}
+
+form > div {
+  margin-bottom: 2%;
+}
+
+form label {
+  display: block;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-section {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+header,
+.site-row,
+.info-section,
+.form-heading {
+  background-color: #232c07;
+}
+
+.login-page,
+.sign-in-page,
+.new-form-page,
+.edit-form-page {
+  border: 3px solid black;
+  padding-bottom: 10px;
+}
+
+.form-heading {
+  padding: 10px;
+}
+
+.info-section,
+.content-section,
+.form-section,
+.sign-in-link,
+.login-link {
+  padding-left: 10px;
+}
+
+.blog-name,
+.blog-title-section,
+.new-page {
+  padding-top: 10px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1%;
+}
+
+header h1 {
+  font-size: 1em;
+}
+
+.site-row {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  justify-content: center;
+}
+
+.site-name {
+  margin-bottom: 10px;
+  padding: 0px 10px;
+  border-style: double;
+}
+
+main {
+  flex: 1;
+  padding: 2% 4%;
+}
+
+.button-no-style {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 100%;
+  font-weight: bold;
+  transition: color 0.1s;
+  margin-left: 16px;
+}
+
+.button-no-style:hover {
+  background: none;
+}
+
+.delete-blog-button {
+  background-color: #d41414;
+}
+
+.delete-blog-button:hover {
+  background-color: #ff643d;
+}
+
+.blog {
+  margin-bottom: 2%;
+  line-height: 150%;
+  border: 3px solid black;
+}
+
+.blog .title span {
+  font-style: italic;
+  font-size: 90%;
+  color: #7d7d7d;
+}
+
+.edit-link {
+  display: block;
+  margin: -1.5% 0 2% 0;
+  color: #2c2307;
+}
+
+.comment-form {
+  margin-bottom: 5%;
+}
+
+.comment {
+  padding: 1%;
+  margin-bottom: 1%;
+}
+
+.comment:nth-child(odd) {
+  background-color: #fff5eb;
+}
+
+.comment .meta {
+  font-size: 90%;
+  margin-bottom: 0.5%;
+  opacity: 0.6;
+}
+
+.new-blog-form input {
+  width: 300px;
+}
+
+.edit-blog-form {
+  margin-bottom: 5%;
+}
+
+#comment-subtitle {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.new-blog-section {
+  display: flex;
+  justify-content: center;
+}
+
+#create-new-blog {
+  width: 19%;
+}
+
+.sign-in-link,
+.login-link {
+  color: #2c2307;
+}
+
+.form-heading h1,
+.form-heading h2 {
+  color: #b8cba2;
+}
+
+.login-form,
+.signup-form,
+.blog-content,
+.blog-title-section {
+  padding: 10px 10px 0px 0px;
+}
+
+.entry-field,
+.login-signup-button,
+.button,
+#blog-title {
+  width: 100%;
+}
+
+.footer {
+  text-align: center;
+}
