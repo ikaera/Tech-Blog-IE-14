@@ -5,7 +5,7 @@ module.exports = {
     return date.toLocaleTimeString();
   },
   formatDate: (date) => {
-    return dayjs().format('ddd, DD/MM/YYYY,  hh:mm:ss a');
+    return dayjs(new Date(date)).format('ddd, MMM D, YYYY [@] h:mm:ss a');
     // `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${
     //   new Date(date).getFullYear() + 5
     // }`;

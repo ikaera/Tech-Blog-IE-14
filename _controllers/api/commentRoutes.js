@@ -62,12 +62,12 @@ router.post('/', withAuth, async (req, res) => {
     const newCom = await Commenttech.create({
       ...req.body,
       user_id: req.session.user_id,
-      include: [
-        {
-          model: Usertech,
-          attributes: ['username'],
-        },
-      ],
+      // include: [
+      //   {
+      //     model: Usertech,
+      //     attributes: ['username'],
+      //   },
+      // ],
     });
 
     res.status(200).json(newCom);
