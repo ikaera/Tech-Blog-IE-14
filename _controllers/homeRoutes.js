@@ -92,15 +92,16 @@ router.get('/new', withAuth, (req, res) => {
 // when someone edits their comment
 router.get('/edit/:id', withAuth, async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id);
+    const postData = await Blogtech.findByPk(req.params.id);
 
     if (postData) {
-      const post = postData.get({ plain: true });
+      const blog = postData.get({ plain: true });
 
-      res.render('edit-post', { layout: 'dashboard', post });
+      res.render('editBlog', { blog });
     } else res.status(404).end();
   } catch (err) {
-    res.redirect('login');
+    console.log(err);
+    res.redirect('/login');
   }
 });
 

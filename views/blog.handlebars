@@ -6,6 +6,12 @@
 <br>
 
 {{> blog-info blog}}
+<a href="/edit/{{blog.id}}"> 
+    <button>
+        Edit Blog
+    </button> 
+</a>
+<br>
 
 {{#if loggedIn}}
 <form class="comment-form">
@@ -24,4 +30,6 @@
 
 {{#if loggedIn}}
 <script src="/js/comments.js"></script>
+{{!-- <script src="/js/deleteBlog.js"></script>
+<script src="/js/editBlog.js"></script> --}}
 {{/if}}
