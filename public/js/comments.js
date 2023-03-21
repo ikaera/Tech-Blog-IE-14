@@ -8,7 +8,7 @@ const commentFormHandlerEvent = async function (event) {
   ).value;
 
   if (commentContent) {
-    await fetch('/api/comments', {
+    await fetch('/api/comment', {
       method: 'POST',
       body: JSON.stringify({
         blogId,
