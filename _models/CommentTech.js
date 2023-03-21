@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const Blogtech = require('./Blogtech');
 class Commenttech extends Model {}
 
 Commenttech.init(
@@ -10,7 +11,7 @@ Commenttech.init(
       primaryKey: true,
       allowNull: false,
     },
-    use_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'Usertech',
@@ -28,6 +29,10 @@ Commenttech.init(
 
     blog_id: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'Blogtech',
+        key: 'id',
+      },
     },
   },
 

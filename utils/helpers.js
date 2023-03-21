@@ -1,13 +1,18 @@
+const dayjs = require('dayjs');
+
 module.exports = {
   formatTime: (date) => {
     return date.toLocaleTimeString();
   },
   formatDate: (date) => {
-    return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${
-      new Date(date).getFullYear() + 5
-    }`;
+    return dayjs().format('ddd, DD/MM/YYYY,  hh:mm:ss a');
+    // `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${
+    //   new Date(date).getFullYear() + 5
+    // }`;
   },
 };
+
+// dayjs().format('ddd, DD/MM/YYYY at hh:mm:ss a');
 
 // module.exports = {
 //   get_emoji: () => {

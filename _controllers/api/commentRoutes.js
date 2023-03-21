@@ -1,70 +1,63 @@
 const router = require('express').Router();
-const { Commenttech } = require('../../_models');
+const { Commenttech, Usertech, Blogtech } = require('../../_models');
+const withAuth = require('../../utils/auth');
 
-// GET all comments
-router.get('/', async (req, res) => {
-  try {
-    const comData = await Commenttech.findAll({
-      include: [
-        {
-          model: UserTech,
-          attributes: ['username', 'filename', 'description'],
-        },
-      ],
-    });
+// // GET all comments
+// router.get('/', async (req, res) => {
+//   try {
+//     const comData = await Commenttech.findAll({
+//       include: [
+//         {
+//           model: Usertech,
+//           attributes: ['username', 'description'],
+//         },
+//       ],
+//     });
 
-    const comments = comData.map((b) => b.get({ plain: true }));
+//     const comments = comData.map((b) => b.get({ plain: true }));
 
-    res.render('homepage', {
-      comments,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+//     res.render('homepage', {
+//       comments,
+//       loggedIn: req.session.loggedIn,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 // GET one comment
 
-router.get('/blog/:id', async (req, res) => {
-  // If the user is not logged in, redirect the user to the login page
-  if (!req.session.loggedIn) {
-    res.redirect('/login');
-  } else {
-    // If the user is logged in, allow them to view the gallery
-    try {
-      const comData = await Commenttech.findByPk(req.params.id, {
-        include: [
-          {
-            model: UserTech,
-            attributes: [
-              'username',
-              'id',
-              'title',
-              'artist',
-              'exhibition_date',
-              'filename',
-              'description',
-            ],
-          },
-          {
-            model: Commenttech,
-            include: [UserTech],
-          },
-        ],
-      });
-      const comment = comData.get({ plain: true });
+// router.get('/blog/:id', async (req, res) => {
+//   // If the user is not logged in, redirect the user to the login page
+//   if (!req.session.loggedIn) {
+//     res.redirect('/login');
+//   } else {
+//     // If the user is logged in, allow them to view the gallery
+//     try {
+//       const comData = await Commenttech.findByPk(req.params.id, {
+//         include: [
+//           {
+//             model: Usertech,
+//             attributes: ['username', 'id'],
+//           },
+//           {
+//             model: Commenttech,
+//             include: [Usertech],
+//           },
+//         ],
+//       });
+//       const comment = comData.get({ plain: true });
 
-      res.render('comment', { comment, loggedIn: req.session.loggedIn });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  }
-});
+//       res.render('comment', { comment, loggedIn: req.session.loggedIn });
+//     } catch (err) {
+//       console.log(err);
+//       res.status(500).json(err);
+//     }
+//   }
+// });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const newCom = await Commenttech.create({
       ...req.body,
@@ -77,24 +70,24 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
-  try {
-    const comData = await Commenttech.destroy({
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
+// router.delete('/:id', async (req, res) => {
+//   try {
+//     const comData = await Commenttech.destroy({
+//       where: {
+//         id: req.params.id,
+//         user_id: req.session.user_id,
+//       },
+//     });
 
-    if (!comData) {
-      res.status(404).json({ message: '404 No Comment found with this id!' });
-      return;
-    }
+//     if (!comData) {
+//       res.status(404).json({ message: '404 No Comment found with this id!' });
+//       return;
+//     }
 
-    res.status(200).json(comData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.status(200).json(comData);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;
