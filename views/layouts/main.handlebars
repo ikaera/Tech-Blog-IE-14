@@ -18,7 +18,9 @@
       <header class='hero'>
         <nav class='navbar navbar-expand-lg navbar-light bg-light'>
           <div class='container-fluid'>
-            <a class='navbar-brand' href='#'>The Tech Blog</a>
+            <a class='navbar-brand app-title' href='/'><h1 class='app-title'>
+                The Tech Blog
+              </h1></a>
             <button
               class='navbar-toggler'
               type='button'
@@ -38,11 +40,12 @@
                     aria-current='page'
                     href='/'
                   >Home</a>
+
                 </li>
 
                 {{#if loggedIn}}
                   <li class='nav-item'>
-                    <a class='nav-link' href='/dashboard'>Dashbord</a>
+                    <a class='nav-link' href='/dashboard'>Dashboard</a>
                   </li>
 
                   <button id='logout' class='btn'>Sign out</button>
@@ -52,7 +55,7 @@
                   </li> }}
 
                 {{else}}
-
+                  <a class='nav-link' href='/dashboard'>Dashboard</a>
                   <li class='nav-item'>
                     <a class='nav-link' href='/login'>Login</a>
                   </li>
@@ -65,7 +68,7 @@
             </div>
           </div>
         </nav>
-        <h1 class='app-title'> <a href='/'> The Tech Blog </a></h1>
+        {{! <h1 class='app-title'> <a href='/'> The Tech Blog </a></h1> }}
       </header>
       <main>
         {{{body}}}
