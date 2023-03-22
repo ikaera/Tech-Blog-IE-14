@@ -5,7 +5,7 @@ async function deleteHandlerEvent(event) {
     window.location.toString().split('/').length - 1
   ];
 
-  const response = await fetch(`/api/posts/${blogId}`, {
+  const response = await fetch(`/api/blog/${blogId}`, {
     method: 'DELETE',
   });
   const result = await response.json();

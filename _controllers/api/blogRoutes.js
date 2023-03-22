@@ -1,7 +1,9 @@
 const router = require('express').Router();
-const { Blogtech } = require('../../_models');
+const { Blogtech, Usertech, Commenttech } = require('../../_models');
+const withAuth = require('../../utils/auth');
 
-router.post('/', async (req, res) => {
+// Create a blog-post
+router.post('/', withAuth, async (req, res) => {
   try {
     const newBlog = await Blogtech.create({
       ...req.body,
@@ -14,7 +16,8 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
+//Delete a blog-post
+router.delete('/:id', withAuth, async (req, res) => {
   try {
     const blogData = await Blogtech.destroy({
       where: {
@@ -32,6 +35,60 @@ router.delete('/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+});
+
+// Update a blog-post
+// router.put("/:id", withAuth, async (req, res) => {
+//   try {
+//     const blogData = await Blogtech.update({
+//       title: req.body.title,
+//       content: req.body.post_content,
+//   }, {
+//       where: {
+//           id: req.params.id,
+//       },
+//   })
+
+//       if (!blogData) {
+//               res.status(404).json({
+//                   message: "No post found with this id"
+//               });
+//               return;
+//           }
+//           res.json(blogData);
+//       } catch((err) => {
+//           console.log(err);
+//           res.status(500).json(err);
+//       });
+// });
+
+// Update a blog-post
+router.put('/:id', withAuth, (req, res) => {
+  Post.update(
+    {
+      title: req.body.title,
+      content: req.body.blogContent,
+    },
+    {
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    }
+  )
+    .then((blogData) => {
+      if (!blogData) {
+        res.status(404).json({
+          message: 'No post found with this id',
+        });
+        return;
+      }
+      res.json(blogData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
