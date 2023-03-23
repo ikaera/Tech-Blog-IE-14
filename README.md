@@ -90,7 +90,8 @@ My motivation to accomplish this project was the following: I wanted to build a 
 ### Links: 
 
  - The URL of the functional, deployed application: 
-    * 
+    * https://secure-tor-51469.herokuapp.com/
+    
 - The URL of the GitHub repository:
     * https://github.com/ikaera/Tech-Blog-IE-14
 
