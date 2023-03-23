@@ -64,7 +64,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 
 // Update a blog-post
 router.put('/:id', withAuth, (req, res) => {
-  Post.update(
+  Blogtech.update(
     {
       title: req.body.title,
       content: req.body.blogContent,
