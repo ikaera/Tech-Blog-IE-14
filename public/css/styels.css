@@ -29,15 +29,6 @@ body {
   background-color: #f3f3f3;
 }
 
-/* h2 {
-  font-size: 2rem;
-} */
-
-/* .main {
-  background: var(--gradient-secondary);
-  padding: 2rem;
-} */
-
 * {
   box-sizing: border-box;
 }
@@ -47,7 +38,7 @@ html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Courier New', Courier, monospace;
   color: var(--color-primary-darker);
 }
 
@@ -64,12 +55,12 @@ a,
 
 a:hover,
 .button-no-style:hover {
-  color: #e2edd5;
+  color: aquamarine;
 }
 
 a {
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
   transition: color 0.1s;
 }
 
@@ -98,21 +89,21 @@ button:hover {
   color: #2c2307;
 }
 
-textarea,
-input {
+input,
+textarea {
   padding: 0.5%;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
 
-textarea:focus,
-input:focus {
+input:focus,
+textarea:focus {
   outline: none;
   border: 1px solid #3486eb;
 }
 
 textarea {
-  min-width: 40%;
+  min-width: 50%;
   min-height: 100px;
 }
 
@@ -158,11 +149,11 @@ header,
   padding: 10px;
 }
 
-.info-section,
 .content-div,
 .form-section,
-.sign-in-link,
-.login-link {
+.info-section,
+.login-link,
+.sign-in-link {
   padding-left: 10px;
 }
 
@@ -170,6 +161,7 @@ header,
 .blog-title-section,
 .new-page {
   padding-top: 10px;
+  padding-bottom: 1px;
   /* color: #2c2307; */
 }
 
@@ -181,7 +173,7 @@ header {
 }
 
 header h1 {
-  font-size: 1em;
+  font-size: 2em;
 }
 
 .site-row {
@@ -217,17 +209,19 @@ main {
 }
 
 .delete-blog-button {
-  background-color: #d41414;
+  background-color: var(--color-tertiary);
 }
 
 .delete-blog-button:hover {
-  background-color: #ff643d;
+  background-color: var(--color-tertiary-darker);
+  color: #ccc;
 }
 
 .blog {
   margin-bottom: 2%;
+  padding: 10px;
   line-height: 150%;
-  border: 3px solid black;
+  border: 3px dotted black;
 }
 
 .blog .title span {
@@ -280,7 +274,7 @@ main {
 }
 
 #create-new-blog {
-  width: 19%;
+  width: 20%;
 }
 
 .sign-in-link,
