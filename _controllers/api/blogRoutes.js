@@ -67,7 +67,7 @@ router.put('/:id', withAuth, (req, res) => {
   Blogtech.update(
     {
       title: req.body.title,
-      content: req.body.blogContent,
+      description: req.body.blogContent,
     },
     {
       where: {
