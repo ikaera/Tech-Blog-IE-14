@@ -24,7 +24,7 @@
 
 body {
   font-weight: 300;
-  color: #444;
+  color: var(--color-primary-darker);
   margin: 25px;
   background-color: #f3f3f3;
 }
@@ -59,7 +59,7 @@ main,
 a,
 .button-no-style,
 #comment-subtitle {
-  color: #b8cba2;
+  color: #213807;
 }
 
 a:hover,
@@ -77,7 +77,7 @@ button {
   background-color: var(--color-primary-darker);
   border: 0;
   padding: 1%;
-  color: white;
+  color: var();
   font-weight: bold;
   transition: background-color 0.1s;
   cursor: pointer;
@@ -143,7 +143,7 @@ header,
 .site-row,
 .info-section,
 .form-heading {
-  background-color: #232c07;
+  background-color: #868f6d;
 }
 
 .login-page,
@@ -159,7 +159,7 @@ header,
 }
 
 .info-section,
-.content-section,
+.content-div,
 .form-section,
 .sign-in-link,
 .login-link {
@@ -170,6 +170,7 @@ header,
 .blog-title-section,
 .new-page {
   padding-top: 10px;
+  /* color: #2c2307; */
 }
 
 header {
@@ -284,12 +285,12 @@ main {
 
 .sign-in-link,
 .login-link {
-  color: #2c2307;
+  color: #151102;
 }
 
 .form-heading h1,
 .form-heading h2 {
-  color: #b8cba2;
+  color: var(--color-primary);
 }
 
 .login-form,
