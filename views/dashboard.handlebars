@@ -16,14 +16,17 @@
                 <div class='blog-name'>
                   <a href='/blog/{{blog.id}}' class='links'>{{blog.title}}</a>
                 </div>
-                <div class='created-by'>
-                  <p id='comment-subtitle'>
-                    Posted
-                    {{!-- <b>{{username}} </b>  --}}
-                    on:
-                    <b>{{formatDate blog.date_created}}</b>
-                  </p>
-                </div>
+                {{#if blog}}
+                  <div class='created-by'>
+                    <p id='comment-subtitle'>
+
+                      Posted
+                      {{!-- <b>{{username}} </b>  --}}
+                      on:
+                      <b>{{formatDate blog.date_created}}</b>
+                    </p>
+                  </div>
+                {{/if}}
               </div>
               <div class='content-section'>
                 <p>{{blog.description}}</p>

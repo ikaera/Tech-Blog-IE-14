@@ -18,9 +18,9 @@
   margin: 0;
 }
 
-/* html {
-  font-size: 10px;
-} */
+html {
+  font-size: 20px;
+}
 
 body {
   font-weight: 300;
@@ -47,6 +47,12 @@ main,
   background-color: azure;
 }
 
+.hero {
+  background-color: #6ee5b7;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 15px;
+  font-size: 1.8rem;
+}
 a,
 .button-no-style,
 #comment-subtitle {
