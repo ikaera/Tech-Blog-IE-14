@@ -16,7 +16,7 @@ async function editFormHandlerEvent(event) {
       blogContent: blogContent,
     }),
     headers: {
-      ContentType: 'application/json',
+      'Content-Type': 'application/json',
     },
   });
   const result = await response.json();
