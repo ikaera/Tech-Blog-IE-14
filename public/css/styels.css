@@ -74,16 +74,19 @@ a {
 button {
   background-color: var(--color-primary-darker);
   border: 0;
-  padding: 1%;
+  border-radius: 30px;
   color: var();
-  font-weight: bold;
-  transition: background-color 0.1s;
   cursor: pointer;
-  border-radius: 5px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  transition: background-color 0.1s;
+
+  padding: 2%;
 }
 
 button:hover {
   background-color: var(--color-secondary-darker);
+  opacity: 0.7;
 }
 
 .blog-list {
