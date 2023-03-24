@@ -5,10 +5,10 @@ module.exports = {
     return date.toLocaleTimeString();
   },
   formatDate: (date) => {
-    return dayjs(new Date(date)).format('ddd, MMM D, YYYY [@] h:mm:ss a');
-    // `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${
-    //   new Date(date).getFullYear() + 5
-    // }`;
+    // return dayjs(new Date(date)).format('ddd, MMM D, YYYY [@] h:mm a');
+    return `${new Date(date).getMonth() + 1}/${new Date(
+      date
+    ).getDate()}/${new Date(date).getFullYear()}`;
   },
 };
 
