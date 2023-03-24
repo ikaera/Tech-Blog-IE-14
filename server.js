@@ -10,9 +10,15 @@ const session = require('express-session');
 // const routes = require('./_controllers');
 const sequelize = require('./config/connection');
 
+// const visitorCount = require('./express-visitor-counter/src/visitor_counter');
+
 // Initializes Sequelize with session store
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const helpers = require('./utils/helpers');
+
+const expressVisitorCounter = require('express-visitor-counter');
+
+const counters = {};
 
 // Sets up the Express App
 const app = express();
@@ -41,7 +47,24 @@ const sess = {
   }),
 };
 
+app.enable('trust proxy');
+
 app.use(session(sess));
+app.use(
+  expressVisitorCounter({
+    hook: (counterId) => (counters[counterId] = (counters[counterId] || 0) + 1),
+  })
+);
+
+app.use((req, res, next) => {
+  req.session.save(() => {
+    req.session.counters = counters;
+    // req.session.loggedIn = true;
+    next();
+    // res.status(200).json(userData);
+  });
+});
+
 const hbs = exphbs.create({ helpers });
 
 // Set Handlebars as the default template engine.
@@ -61,5 +84,3 @@ sequelize.sync({ force: false }).then(() => {
     console.log('Server listening on: http://localhost:' + PORT)
   );
 });
-
-module.exports = require('./express-visitor-counter/src/visitor_counter');

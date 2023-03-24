@@ -26,12 +26,14 @@ router.get('/', async (req, res) => {
         req.session.countVisit = 1;
       }
     });
-
+    // {bob: 7,
+    // jeff: 22}
     res.render('homepage', {
       blogs,
       loggedIn: req.session.loggedIn,
       // We send over the current 'countVisit' session variable to be rendered
       countVisit: req.session.countVisit,
+      totalVisitors: Object.keys(req.session.counters).length,
     });
   } catch (err) {
     console.log(err);
@@ -110,7 +112,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     if (postData) {
       const blog = postData.get({ plain: true });
 
-      res.render('editBlog', { blog });
+      res.render('editBlog', { blog, loggedIn: req.session.loggedIn });
     } else res.status(404).end();
   } catch (err) {
     console.log(err);
