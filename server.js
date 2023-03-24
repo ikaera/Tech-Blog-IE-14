@@ -16,6 +16,7 @@ const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const helpers = require('./utils/helpers');
 
+// const expressSession = require('express-session');
 const expressVisitorCounter = require('express-visitor-counter');
 
 const counters = {};
@@ -48,6 +49,9 @@ const sess = {
 };
 
 app.enable('trust proxy');
+// app.use(
+//   expressSession({ secret: 'secret', resave: false, saveUninitialized: true })
+// );
 
 app.use(session(sess));
 app.use(
@@ -64,6 +68,7 @@ app.use((req, res, next) => {
     // res.status(200).json(userData);
   });
 });
+// app.get('/', (req, res, next) => res.json(counters));
 
 const hbs = exphbs.create({ helpers });
 

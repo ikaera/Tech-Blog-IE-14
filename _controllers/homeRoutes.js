@@ -26,8 +26,7 @@ router.get('/', async (req, res) => {
         req.session.countVisit = 1;
       }
     });
-    // {bob: 7,
-    // jeff: 22}
+
     res.render('homepage', {
       blogs,
       loggedIn: req.session.loggedIn,
