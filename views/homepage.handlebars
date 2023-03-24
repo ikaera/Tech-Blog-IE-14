@@ -2,7 +2,7 @@
   {{#each blogs as |blog|}}
     <li>
       <article class='blog'>
-        <div class='entire-blog'>
+        <section class='entire-blog'>
           <div class='info'>
             <div class='blog-name'>
               <a href='/blog/{{blog.id}}' class='links'>{{blog.title}}</a>
@@ -19,7 +19,7 @@
           <div class='content-div'>
             <p>{{blog.description}}</p>
           </div>
-        </div>
+        </section>
       </article>
       {{!-- {{blog.title}} --}}
     </li>

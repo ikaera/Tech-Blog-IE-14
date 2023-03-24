@@ -57,6 +57,7 @@ a,
 .button-no-style,
 #comment-subtitle {
   color: #213807;
+  font-size: 1.5rem;
 }
 
 a:hover,
@@ -258,7 +259,8 @@ main {
 .comment .meta {
   font-size: 90%;
   margin-bottom: 0.5%;
-  opacity: 0.6;
+  opacity: 1;
+  color: #151102;
 }
 
 .new-blog-form input {
@@ -270,8 +272,12 @@ main {
 }
 
 #comment-subtitle {
-  font-size: 12px;
+  font-size: 1rem;
   font-style: italic;
+  color: black;
+  font-weight: bolder;
+  background-color: #bae640;
+  padding: 2px;
 }
 
 .new-blog-section {
@@ -290,7 +296,7 @@ main {
 
 .form-heading h1,
 .form-heading h2 {
-  color: var(--color-primary);
+  color: var(--color-primary-darker);
 }
 
 .login-form,

@@ -65,33 +65,4 @@ router.put('/:id', withAuth, async (req, res) => {
   }
 });
 
-// Update a blog-post
-// router.put('/:id', withAuth, (req, res) => {
-//   Blogtech.update(
-//     {
-//       title: req.body.title,
-//       description: req.body.blogContent,
-//     },
-//     {
-//       where: {
-//         id: req.params.id,
-//         user_id: req.session.user_id,
-//       },
-//     }
-//   )
-//     .then((blogData) => {
-//       if (!blogData) {
-//         res.status(404).json({
-//           message: 'No post found with this id',
-//         });
-//         return;
-//       }
-//       res.json(blogData);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
-
 module.exports = router;
