@@ -8,7 +8,7 @@
   --color-primary-opacity: #5ec5763a;
   --color-secondary-opacity: #ffcd0331;
   --color-tertiary-opacity: #ff58602d;
-  --gradient-primary: linear-gradient(to top left, #39b385, #9be15d);
+  --gradient-primary: linear-gradient(to top left, rgb(56, 179, 132), #7aed16);
   --gradient-secondary: linear-gradient(to top left, #ffcb03, #ffee03);
 }
 
@@ -23,10 +23,10 @@ html {
 }
 
 body {
+  background-color: #f3f3f3;
   font-weight: 300;
   color: var(--color-primary-darker);
   margin: 25px;
-  background-color: #f3f3f3;
 }
 
 * {
@@ -48,7 +48,7 @@ main,
 }
 
 .hero {
-  background-color: #6ee5b7;
+  background: var(--gradient-primary);
   font-family: Arial, Helvetica, sans-serif;
   padding: 15px;
   font-size: 1.8rem;
@@ -62,7 +62,8 @@ a,
 
 a:hover,
 .button-no-style:hover {
-  color: aquamarine;
+  /* color: aquamarine; */
+  opacity: 0.8;
 }
 
 a {
@@ -74,16 +75,19 @@ a {
 button {
   background-color: var(--color-primary-darker);
   border: 0;
-  padding: 1%;
+  border-radius: 30px;
   color: var();
-  font-weight: bold;
-  transition: background-color 0.1s;
   cursor: pointer;
-  border-radius: 5px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  transition: background-color 0.1s;
+
+  padding: 2%;
 }
 
 button:hover {
   background-color: var(--color-secondary-darker);
+  opacity: 0.7;
 }
 
 .blog-list {
