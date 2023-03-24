@@ -18,9 +18,9 @@
   margin: 0;
 }
 
-/* html {
-  font-size: 10px;
-} */
+html {
+  font-size: 20px;
+}
 
 body {
   font-weight: 300;
@@ -47,10 +47,17 @@ main,
   background-color: azure;
 }
 
+.hero {
+  background-color: #6ee5b7;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 15px;
+  font-size: 1.8rem;
+}
 a,
 .button-no-style,
 #comment-subtitle {
   color: #213807;
+  font-size: 1.5rem;
 }
 
 a:hover,
@@ -130,7 +137,7 @@ form label {
   justify-content: space-between;
 }
 
-header,
+/* header, */
 .site-row,
 .info-section,
 .form-heading {
@@ -252,7 +259,8 @@ main {
 .comment .meta {
   font-size: 90%;
   margin-bottom: 0.5%;
-  opacity: 0.6;
+  opacity: 1;
+  color: #151102;
 }
 
 .new-blog-form input {
@@ -264,8 +272,12 @@ main {
 }
 
 #comment-subtitle {
-  font-size: 12px;
+  font-size: 1rem;
   font-style: italic;
+  color: black;
+  font-weight: bolder;
+  background-color: #bae640;
+  padding: 2px;
 }
 
 .new-blog-section {
@@ -284,7 +296,7 @@ main {
 
 .form-heading h1,
 .form-heading h2 {
-  color: var(--color-primary);
+  color: var(--color-primary-darker);
 }
 
 .login-form,
