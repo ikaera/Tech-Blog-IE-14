@@ -1,24 +1,29 @@
+<!-- We are tracking the number of times we visit this homepage -->
+<h5 class='visit-count'>
+  Number of times this webpage was visited:
+  {{countVisit}}
+</h5>
 <ul class='blog-list'>
   {{#each blogs as |blog|}}
     <li>
       <article class='blog'>
         <div class='entire-blog'>
           <div class='info'>
-            <div class='blog-name'>
+            <section class='blog-name'>
               <a href='/blog/{{blog.id}}' class='links'>{{blog.title}}</a>
-            </div>
-            <div class='created-by'>
+            </section>
+            <section class='created-by'>
               <p id='comment-subtitle'>
                 Posted by
                 <b>{{blog.usertech.username}} </b>
                 on
                 <b>{{formatDate blog.date_created}}</b>
               </p>
-            </div>
+            </section>
           </div>
-          <div class='content-div'>
+          <section class='content-div'>
             <p>{{blog.description}}</p>
-          </div>
+          </section>
         </div>
       </article>
       {{!-- {{blog.title}} --}}
