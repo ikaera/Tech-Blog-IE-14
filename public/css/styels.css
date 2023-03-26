@@ -317,6 +317,10 @@ main {
   width: 100%;
 }
 
+.visit-count {
+  background-color: #151102;
+  color: #ccc;
+}
 .footer {
   /* background: blue; */
   height: 50px;
