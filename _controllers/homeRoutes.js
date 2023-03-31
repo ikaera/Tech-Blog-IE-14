@@ -26,13 +26,46 @@ router.get('/', async (req, res) => {
         req.session.countVisit = 1;
       }
     });
+    let expressVisitorCounter = req.session.counters;
+    console.log(expressVisitorCounter);
+    let visitorCounterValues = Object.values(expressVisitorCounter);
+    let visitorCounterKeys = Object.keys(expressVisitorCounter);
 
+    let numberOfDailyUniqueSessions;
+    let numberOfDailyUniqueIpAddresses;
+    let numberOfDailyRequests;
+
+    for (let i = 0; i < visitorCounterKeys.length; i++) {
+      if (visitorCounterKeys[i].split('-')[1] === 'sessions') {
+        numberOfDailyUniqueSessions = visitorCounterValues[i];
+      } else if (visitorCounterKeys[i].split('-')[1] === 'ip') {
+        numberOfDailyUniqueIpAddresses = visitorCounterValues[i];
+      } else if (visitorCounterKeys[i].split('-')[1] === 'requests') {
+        numberOfDailyRequests = visitorCounterValues[i];
+      }
+    }
+
+    // let numberOfDailyRequests = Object.values(expressVisitorCounter);
+    // let numberOfDailyUniqueIpaddresses = Object.values(
+    //   expressVisitorCounter
+    // )[1];
+    // let numberOfDailyUniqueSessions = Object.values(expressVisitorCounter)[2];
+
+    console.log(`values:  ${visitorCounterValues}`);
+    console.log(`keys:  ${visitorCounterKeys}`);
+
+    //   countVisit: req.session.countVisit,
+    //   totalVisitors: Object.keys(req.session.counters).length,
+    // });
     res.render('homepage', {
       blogs,
       loggedIn: req.session.loggedIn,
       // We send over the current 'countVisit' session variable to be rendered
       countVisit: req.session.countVisit,
-      totalVisitors: Object.keys(req.session.counters).length,
+      // totalVisitors: Object.keys(expressVisitorCounter).length,
+      numberOfDailyRequests: numberOfDailyRequests,
+      numberOfDailyUniqueIpAddresses: numberOfDailyUniqueIpAddresses,
+      numberOfDailyUniqueSessions: numberOfDailyUniqueSessions,
     });
   } catch (err) {
     console.log(err);

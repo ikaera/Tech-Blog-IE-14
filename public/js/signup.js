@@ -23,7 +23,10 @@ async function signUpHandler(event) {
       document.location.replace('/dashboard');
     } else {
       console.log(response.statusText);
+      alert(result.errors[0].message);
     }
+  } else {
+    alert('Please provide username and password');
   }
 }
 

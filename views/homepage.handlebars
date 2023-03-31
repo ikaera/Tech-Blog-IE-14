@@ -1,13 +1,5 @@
 <!-- We are tracking the number of times we visit this homepage -->
-{{!-- <h5 class='visit-count'>
-  Webpage was visited by
-  {{countVisit}}
-  times.
-  <br />
-  Webpage had
-  {{totalVisitors}}
-  visitors.
-</h5> --}}
+
 <ul class='blog-list'>
   {{#each blogs as |blog|}}
     <li>
@@ -34,6 +26,24 @@
       {{!-- {{blog.title}} --}}
     </li>
   {{/each}}
+  <br />
+</ul>
+<ul class='visit-count'>
+  <li>
+    Webpage was visited by
+    {{countVisit}}
+    times
+  </li>
+
+  <li>Number of daily unique sessions which hit the server:
+    {{numberOfDailyUniqueSessions}}</li>
+
+  <li>Number of daily unique ip addresses which hit the server:
+    {{numberOfDailyUniqueIpAddresses}}</li>
+
+  <li>Number of daily HTTP requests received by the server is:
+    {{numberOfDailyRequests}}</li>
+
 </ul>
 
 {{! <divclass="row mb-4 project">
